@@ -2,6 +2,14 @@ import { EllipsisVertical } from "lucide-react";
 import React, { useState } from "react";
 
 export default function CardComponent({ assignment }) {
+  const formatDate = (date) => {
+    const dateObj = new Date(date).toLocaleDateString("en-US", {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    });
+    return dateObj;
+  };
   const statusBar = (progress) => {
     if (progress == 25) {
       return "bg-custom-pink w-1/4";
@@ -52,7 +60,7 @@ export default function CardComponent({ assignment }) {
             <div className="flex justify-between mb-5">
               {/* date */}
               <p className={` font-medium ${statusColor(progress)}`}>
-                {dueDate}
+                {formatDate(dueDate)}
               </p>
               <EllipsisVertical size={20} color="#374957" />
             </div>

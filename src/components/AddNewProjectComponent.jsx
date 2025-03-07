@@ -3,13 +3,14 @@ import React, { useEffect, useRef, useState } from "react";
 
 export default function AddNewProjectComponent({ handleAddNewAssignment }) {
   const [project, setProject] = useState({});
-  const [progress, setProgress] = useState("Select Progress");
+  const [progress, setProgress] = useState("");
   const [errorMessage, setErrorMessage] = useState({});
   const formRef = useRef(null);
 
   // handle select progress
   const handleSelectProgress = (e) => {
     const progressValue = e.target.value;
+    console.log(progressValue);
 
     setProgress(progressValue);
   };
@@ -176,11 +177,8 @@ export default function AddNewProjectComponent({ handleAddNewAssignment }) {
                         : "")
                     }
                     onChange={handleSelectProgress}
-                    aria-errormessage="input progress"
                   >
-                    <option defaultValue="Select Progress">
-                      Select Progress
-                    </option>
+                    <option defaultValue="">Select Progress</option>
                     <option value="100">100</option>
                     <option value="75">75</option>
                     <option value="50">50</option>

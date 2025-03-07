@@ -7,6 +7,16 @@ export default function LearningMaterialsComponent() {
   const [learningMaterialsData, setLearningMaterialsData] =
     useState(learningMaterials);
 
+  const formatDate = (date) => {
+    const dateObj = new Date(date).toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    });
+    return dateObj;
+  };
+
   const getFilter = (filter) => {
     setLearningMaterialsData((prevData) => {
       const sortData = [...prevData].sort((a, b) => {
@@ -67,7 +77,9 @@ export default function LearningMaterialsComponent() {
                     onClick={() => handleisFavorite(id)}
                   />
                 </div>
-                <p className="text-sm text-gray-400">Posted at: {postedAt}</p>
+                <p className="text-sm text-gray-400">
+                  Posted at: {formatDate(postedAt)}
+                </p>
               </div>
             </div>
           )
