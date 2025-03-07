@@ -21,7 +21,6 @@ export default function AssignmentsComponent({ filter }) {
   };
 
   const filteredData = filterData(filter);
-  console.log(filteredData);
   
   return (
     <div className="w-full">
