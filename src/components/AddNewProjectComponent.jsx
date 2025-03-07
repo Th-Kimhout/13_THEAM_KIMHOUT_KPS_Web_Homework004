@@ -1,7 +1,7 @@
 import { Plus } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
-export default function AddNewProjectComponent({ handleAddProject }) {
+export default function AddNewProjectComponent({ handleAddNewAssignment }) {
   const [project, setProject] = useState({});
   const [progress, setProgress] = useState("Select Progress");
   const [errorMessage, setErrorMessage] = useState({});
@@ -30,7 +30,7 @@ export default function AddNewProjectComponent({ handleAddProject }) {
     setErrorMessage(errors);
 
     if (Object.keys(errors).length > 0) return;
-    handleAddProject(newProject);
+    handleAddNewAssignment(newProject);
 
     if (formRef.current) {
       formRef.current.reset();

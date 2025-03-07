@@ -1,7 +1,7 @@
 import { EllipsisVertical } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 
-export default function CardComponent({ projectData }) {
+export default function CardComponent({ assignment }) {
   const statusBar = (progress) => {
     if (progress == 25) {
       return "bg-custom-pink w-1/4";
@@ -42,8 +42,8 @@ export default function CardComponent({ projectData }) {
   };
 
   return (
-    <div className="grid grid-cols-3 w-full place-content-between pt-8 overflow-auto  gap-4 h-[50vh] no-scrollbar">
-      {projectData.map(
+    <div className="grid grid-cols-3 w-full place-content-between pt-8 overflow-auto gap-4 h-[50vh] no-scrollbar">
+      {assignment.map(
         ({ projectName, dueDate, progress, description }, index) => (
           <div
             className="w-full p-6 bg-white shadow-sm rounded-2xl"

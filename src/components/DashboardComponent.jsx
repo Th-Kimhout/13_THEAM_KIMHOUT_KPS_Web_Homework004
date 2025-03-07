@@ -1,6 +1,6 @@
 import React from "react";
-
-export default function DashboardComponent({ dashboard }) {
+import { dashboard } from "../data/dashboard";
+export default function DashboardComponent() {
   return (
     <div>
       <h2 className="mb-5 text-xl font-semibold">Dashboard</h2>

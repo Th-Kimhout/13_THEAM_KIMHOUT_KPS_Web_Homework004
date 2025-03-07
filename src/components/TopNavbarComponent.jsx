@@ -4,7 +4,6 @@ import React, { useState } from "react";
 export default function TopNavbarComponent({ getSearchValue }) {
   const handleUserInput = (userInput) => {
     const { value } = userInput.target;
-
     getSearchValue(value);
   };
 
