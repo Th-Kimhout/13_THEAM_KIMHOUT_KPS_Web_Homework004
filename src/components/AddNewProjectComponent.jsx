@@ -10,8 +10,6 @@ export default function AddNewProjectComponent({ handleAddNewAssignment }) {
   // handle select progress
   const handleSelectProgress = (e) => {
     const progressValue = e.target.value;
-    console.log(progressValue);
-
     setProgress(progressValue);
   };
 
